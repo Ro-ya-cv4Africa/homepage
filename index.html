@@ -64,10 +64,10 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active" ><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="practical.html" class="nav-link">Practicals</a></li>
-                  <li><a href="material.html" class="nav-link">Study-Materials</a></li>
+                  <li><a href="practical.html" class="nav-link" style="color: black !important;">Practicals</a></li>
+                  <li><a href="material.html" class="nav-link" style="color: black !important;">Study-Materials</a></li>
                   <li class="dropdown show">
-                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Project</a>
+                    <a class="dropdown-toggle nav-link" style="color: black !important;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Project</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="project_survey.html">CV4Africa Bib-Study</a>
                       <!-- <a class="dropdown-item" href="#">Another action</a>
@@ -75,16 +75,16 @@
                     </div>
                   </li>
                   <li class="dropdown show">
-                    <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+                    <a class="dropdown-toggle nav-link" style="color: black !important;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="event_workshop.html">CV4Africa DLI'23 Workshop</a>
                       <!-- <a class="dropdown-item" href="#">Another action</a>
                       <a class="dropdown-item" href="#">Something else here</a> -->
                     </div>
                   </li>
-                  <li><a href="community.html" class="nav-link">Community</a></li>
+                  <li><a href="community.html" class="nav-link" style="color: black !important;">Community</a></li>
 
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="contact.html" class="nav-link" style="color: black !important;">Contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -450,18 +450,27 @@
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
                 // console.log(document.getElementById('home-section'))
-                document.getElementById('navbar_top').classList.remove('position-relative');
-                document.getElementById('navbar_top').classList.add('fixed-top');
-                document.getElementById('navbar_top').style = 'background-color: black;'
-                // document.getElementById('navbar_top').classList.add('header-color');
-
+                  document.getElementById('navbar_top').classList.remove('position-relative');
+                  document.getElementById('navbar_top').classList.add('fixed-top');
+                  document.getElementById('navbar_top').style = 'background-color: black;'
+                  // document.getElementById('navbar_top').style = 'color: white;'
+                  
+                  // document.getElementById('navbar_top').classList.add('header-color');
+                  const header_links = document.getElementsByClassName('nav-link')
+                  for (let i = 0; i < header_links.length; i++) {
+                    header_links[i].style = "color: white !important;"
+                  }
                 } else {
-                document.getElementById('navbar_top').classList.remove('fixed-top');
-                document.getElementById('navbar_top').style = 'background-color: transparent;'
-                // document.getElementById('navbar_top').classList.remove('header-color');
-                document.getElementById('navbar_top').classList.add('position-relative');
-                // remove padding top from body
-                document.body.style.paddingTop = '0';
+                  document.getElementById('navbar_top').classList.remove('fixed-top');
+                  document.getElementById('navbar_top').style = 'background-color: transparent;'
+                  // document.getElementById('navbar_top').classList.remove('header-color');
+                  document.getElementById('navbar_top').classList.add('position-relative');
+                  // remove padding top from body
+                  const header_links = document.getElementsByClassName('nav-link')
+                  for (let i = 0; i < header_links.length; i++) {
+                    header_links[i].style = "color: black !important;"
+                  }
+                  document.body.style.paddingTop = '0';
                 } 
             });
         }); 
